@@ -6,16 +6,6 @@
 //    origin: localhost;
 //}));
 
-const products = [
-    { name: "versace-right-crystal", category: "floral", price: 2000 },
-    { name: "lavie-est-belle", category: "sweet", price:2000 },
-    { name: "dior-sauvage", category: "citrus", price : 3000},
-    { name: "bvl-aqua", category: "aqua", price:3000 },
-    { name: "gio", category: "aqua", price:3000 },
-    { name: "gucci-bloom", category: "floral", price:4000 },
-    { name: "ysl-libre", category: "citrus", price:4000 }
-];
-
 const productList = [
     {
         "brand": "212",
@@ -625,7 +615,7 @@ const productList = [
         "id": "versace-bright-crystal-tester",
         "category": "floral",
         "price": 1210,
-        "img": "../picturesp_img/versace-bright-crystal.png",
+        "img": "../pictures/p_img/versace-bright-crystal.png",
         "sex": "women"
     },
     {
