@@ -17,11 +17,13 @@ body {
     flex-direction: column;
     width: 100vw;
     min-height: 100vh;
-    background: linear-gradient(light-dark(#ECBAD0,#0F0924), light-dark(#B25681,#B25681));
     background-repeat: no-repeat;
     margin: 0;
     padding: 0;
+    background: linear-gradient( light-dark(#ECBAD0,#0F0924), light-dark(#B25681,#B25681) );
 }
+
+
 
 .main-head.slidedown{
     position: fixed;
@@ -43,13 +45,14 @@ body {
     }
     to{
         top: 0;
-        bottom: 0 2px 8px 0
+        box-shadow: 0 2px 8px rgba(0,0,0,.2);
     }
 }
 nav {
-    width: 500px;
-    height: 50px;
-    margin-top: 20px;
+    top:10px;
+    max-width: 500px;
+    max-height: 50px;
+    margin: 20px auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,6 +83,7 @@ nav span{
     height: 100%;
     background:linear-gradient(45deg,#91759C,#31294C);
     border-radius:10px;
+    transition: .3s;
 }
 
 nav a:nth-child(1):hover~span{
@@ -100,6 +104,7 @@ nav a:nth-child(4):hover~span{
 .check-con{
     width: 100%;
     height: 100%;
+    padding: 2px;
     background: #fff;
     display: flex;
     align-items: center;
@@ -142,35 +147,40 @@ input{
 }
 
 .banner{
-    width: 90vw;
+    width: min(1200px,90%);
     display: flex;
-    flex-shrink:1;
+    flex:1;
     flex-direction:row;
     justify-content:center;
     align-items: center;
+    margin: auto;
     padding-top: 100px;
+    gap: 3rem;
 }
 
-.type{
-    font-size:1.5rem;
+.type {
+    display: inline-block;
+    width: 0;
+    font-size: clamp(1.2rem,4vw,2rem);
     font-weight: 800;
     white-space: nowrap;
     overflow: hidden;
     border-right: 4px solid #fff;
     color: #fff;
-    animation: typing 4s steps(20) infinite;
+    animation: typing 4s steps(20) infinite, blink .7s step-end infinite;
     animation-delay: 2s;
-    blink: 0.6s infinite;
 }
 
 @keyframes typing{
-    0%{
+    0% {
         width: 0;
     }
-    50%{
-        width: 350px;
+
+    50% {
+        width: 24ch; /* Change 20 to match your text length */
     }
-    100%{
+
+    100% {
         width: 0;
     }
 }
@@ -186,8 +196,9 @@ input{
     align-content: center;
     position: relative;
     flex-shrink: 1;
-    width: 400px;
-    height: 400px;
+    width: min(400px,80vw);
+    aspect-ratio:1;
+    height: auto;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #ECBAD0;
@@ -202,9 +213,10 @@ input{
     align-self: center;
     justify-content:center;
     z-index:1;
-    flex-shrink: 1;
-    width: 50%;
-    top: 50%;
+    flex: 1;
+    width: min(600px,100%);
+    padding: 20px;
+    
 }
 
 @media (max-width: 768px){
@@ -258,38 +270,48 @@ input{
 }
 
 @keyframes spin{
-    from{translate:0;}
-    to{translate: -100%;}
+    from{
+        transform:translateX(0);}
+    to{
+        transform:translateX(-100%);}
 }
 
-.projects .blog .media{
-    height: 30vh;
+.projects, 
+.blog, 
+.media{
+    min-height: 300px;
+    height: auto;
     width: 90%;
 }
 
-.group{
-    margin: 25px auto 25px auto;
-    width: 90vw;
-    height: 30vh;
+.group {
+    width: 90%;
+    min-height: 350px;
+    height: auto;
+    margin: 2rem auto;
+    padding: 2rem;
     border: 5px solid #B25681;
     border-radius: 2em;
 }
 
-.project{
-    height: 5em;
+.card-container {
+    min-height: 300px;
+    height: auto;
+    margin-bottom: 1.5rem;
     padding: 0.65em;
-    font-size: 3rem;
+    font-size: clamp(1.5rem,5vw,3rem);
     border-radius: .2em;
     text-align: center;
     align-content: center;
-    display:flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 2rem;
 }
 
 .card {
     margin: 0 auto;
     padding: 2em;
-    width: 200px;
+    width: min(300px,90%);
     max-height: 250px;
     background: #B25681;
     text-align: center;
@@ -307,9 +329,10 @@ p{
     padding-bottom: 10px;
 }
 
-#beach{
-    width: 10vw;
-    height: 10vh;
+#ava{
+    width: 100%;
+    max-width: 200px;
+    height: auto;
     padding: 0.5em;
     background: #31294C;
     border-radius: 10px;
@@ -329,7 +352,7 @@ p{
     background: conic-gradient(from var(--angle),transparent 70%,#ECBAD0);
     top: 50%;
     left: 50%;
-    translate: -50% -50%;
+    transform: translate(-50%, -50%);
     z-index: -1;
     padding: 3px;
     border-radius: 10px;
@@ -366,6 +389,7 @@ p{
     position: relative;
     width: 280px;
     height: 280px;
+    margin: 0 auto;
     display: flex;
     flex-direction:column;
     align-items: center;
@@ -378,9 +402,11 @@ p{
     width: 60px;
     background: #fff;
     border-radius: 50%;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     color: #333;
     font-size: 2rem;
     cursor: pointer;
@@ -398,20 +424,20 @@ p{
 }
 
 
-.menu li{
-    position: absolute;
-    left: 0;
-    list-style: none;
-    transition: 0.5s;
-    transform: rotate(calc(360deg/8*var(--i)));
-    transform-origin: 140px;
-    scale:0;
-    transition-delay: calc(0.05s*(var(--i)-3));
-}
+    .menu li {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -30px 0 0 -30px;
+        list-style: none;
+        transform: rotate(calc(45deg * var(--i))) translateX(-120px) scale(0);
+        transition: .5s;
+        transition-delay: calc(.05s * var(--i));
+    }
 
-.menu:active li{
-    scale:1;
-}
+    .menu.active li {
+        transform: rotate(calc(45deg * var(--i))) translateX(-120px) scale(1);
+    }
 
 .menu li a{
     position: relative;
