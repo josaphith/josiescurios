@@ -46,7 +46,7 @@ body {
 
 .content {
     text-align: center;
-    padding: 2rem;
+    width: 100%;
 //    background: rgba(0,0,0,0.4);
     border-radius: 12px;
     display: flex;
@@ -54,33 +54,32 @@ body {
 }
 
 #lan {
-    margin: auto;
+    width: 50%;
+    padding: 10px 5px 0 0;
     display: flex;
-    margin: auto;
     flex-direction:row;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 }
 
 #lan-child{
-    width: 30%;
+    width: 35%;
     height: 100%;
     display: flex;
     flex-direction:column;
     justify-content:center;
+    grid-row-gap: 10px;
     align-items: center;
-    padding-top:0;
-    margin-top: 0;
 }
 
 #home-icon{
-    max-width: 50px;
-    max-height: 50px;
+    max-width: 30%;
+    max-height: 30%;
+    padding: 0;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 10px;
     opacity: 0.5;
 }
 
@@ -91,8 +90,13 @@ body {
 #home{
     width: 50%;
     height: 100%;
-    margin: auto;
+    display: flex;
+    align-items: flex-start;
+    padding: 20px 0 0 20px;
 }
+ select{
+     max-width: 60%;
+ }
 
 p {
     color: #C7C55B;
@@ -116,14 +120,13 @@ h1 {
 @media (max-width: 768px){
     body {
         background-attachment: scroll;
-        //background-size: 205%;
         background-position: bottom;
     }
     
     
     .content{
-        width: 90%;
-        padding: 1.5rem;
+        width: 100%;
+        
     }
 }
 
