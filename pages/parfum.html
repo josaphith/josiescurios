@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Parfum Collection</title>
+
+	<!--font awesome icon-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<!--css file-->
+	<link rel="stylesheet" href="../css/parfum.css"></link>
+</head>
+<body>
+	<!--Navigation -->
+	<nav class="navbar">
+		<a href="a" class="logo">Josies's World</a>
+		<div class="nav-links">
+			<input type="text" id="searchInput" class="search-input" placeholder="Search products...">
+			<a href="../index.html">Home</a>
+			<a href="#contact">Contact</a>
+		</div>
+	</nav>
+
+	<!--Banner-->
+	<section class="banner">
+			<h1>Josie's Perfume Collection</h1>
+			<p>Con nhà ai mà thơm thơm thế!</p>
+	</section>
+	<section class="controls">
+		<select id="filter-category">
+			<option value="">All Categories</option>
+			<option value="floral">Floral</option>
+			<option value="citrus">Citrus</option>
+			<option value="green">Green</option>
+			<option value="aqua">Aqua</option>
+			<option value="gourmand">Gourmand</option>
+			<option value="woody">Woody</option>
+			<option value="powdery">Powdery</option>
+			<option value="spicy">Spicy</option>
+			<option value="sweet">Sweet</option>
+			<option value="fruity">Fruity</option>
+		</select>
+
+		<select id="sort-by">
+			<option value="default">Default</option>
+			<option value="name">Name</option>
+			<option value="price-asc">Price: Low to High</option>
+			<option value="price-desc">Price: High to Low</option>
+			<option value="under-1">0-1000k</option>
+			<option value="under-2">1000k-2000k</option>
+			<option value="under-3">2000k-3000k</option>
+		</select>
+	</section>
+	<!--Product section-->
+	<section class="products" id="top">
+		<div class="product-grid">
+
+			<!-- Product -->
+			
+			</div>
+		</div>
+		<div id="noResults" class="no-results" hidden>No products found matching your search.</div>
+	</section>
+
+	<footer class="footer">
+		<div class="footer-content">
+			<div class="footer-section">
+				<h3>Josie's World</h3>
+				<p>Love how you smell yet?</p>
+			</div>
+			<div class="footer-section">
+				<h3>Collections</h3>
+				<ul class="footer-links">
+					<li><a href="#top" id="sort-men">Men</a></li>
+					<li><a href="#top" id="sort-women">Women</a></li>
+					<li><a href="#top" id="sort-unisex">Unisex</a></li>
+					
+				</ul>
+			</div>
+
+			<div class="footer-section">
+				<h3>Contact</h3>
+				<div class="social-icons" id="contact">
+					<a href="https://www.facebook.com/Josiescuriosity/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+					<a href="https://www.m.me/Josiescuriosity" target="_blank"><i class="fa-brands fa-facebook-messenger"></i></a>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+	<script src="../scripts/parfum.js"></script>
+</body>
+</html>
