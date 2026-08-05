@@ -1,4 +1,4 @@
-﻿const translations = {
+const translations = {
     en: {
         sel: "Select a language:",
     },
@@ -118,11 +118,13 @@ let paperWidth = 100;
 let paperHeight = 100;
 let paperVelocityX = 10;
 let paperVelocityY = 10;
+const spreadX =  40;
+const spreadY = 30;
+console.log(spreadX);
 
 
-
-let bgWidth = window.screen.width*1/5;    
-let bgHeight = window.screen.height*1/3;
+let bgWidth = window.screen.width *0.75;    
+let bgHeight = window.screen.height *0.80;
 
 
 window.onload = function(){
@@ -154,10 +156,11 @@ function addBottle() {
 
     bottle = {
         image: bottleImg,
-        x: bgWidth - bottleWidth+200,
-        y: bgHeight - bottleHeight + 250,
+        x: (bgWidth * 0.75 - bottleWidth) + ((Math.random() * 2 - 1) *spreadX),
+        y: (bgHeight * 0.80 - bottleHeight / 2) + ((Math.random() * 2 - 1) *spreadY),
         velocityX: bottleVelocityX,
         velocityY: bottleVelocityY
+        
     };
 
     bottle.image.style.left = String(bottle.x) + "px";
@@ -202,8 +205,8 @@ function addPaper() {
 
     paper = {
         image: paperImg,
-        x: bgWidth - paperWidth + 100,
-        y: bgHeight - paperHeight +100,
+        x: bgWidth * 0.20 - paperWidth + ((Math.random() * 2 - 1) * spreadX) ,
+        y: bgHeight * 0.60 - paperHeight + ((Math.random() * 2 - 1) * spreadX),
         velocityX: paperVelocityX,
         velocityY: paperVelocityY
     };
