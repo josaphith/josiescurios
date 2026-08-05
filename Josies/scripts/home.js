@@ -11,18 +11,12 @@ window.addEventListener('scroll', function () {
     }
 })
 
-const section = document.querySelector("section");
-//const observer = new IntersectionObserver((entries) => {
-//    entries.forEach(entry => {
-//        if (entry.isIntersecting) {
-//            entry.target.classList.add("show");
-//        } else {
-//            entry.target.classList.remove("show");
-//        }
-//    })
-//},
-//    {
-//    threshold: 0
-//})
+const menu = document.querySelector(".menu");
+const toggle = document.querySelector(".toggle");
 
-//observer.observe(section);
+toggle.onclick = function () {
+    menu.classList.toggle("active");
+};
+
+const section = document.querySelector("section");
+
