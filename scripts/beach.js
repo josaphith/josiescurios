@@ -1,4 +1,4 @@
-﻿const translations = {
+const translations = {
     en: {
         sel: "Select a language:",
     },
